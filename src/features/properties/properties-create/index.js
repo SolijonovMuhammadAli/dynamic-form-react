@@ -12,6 +12,7 @@ import { initialValues } from "../data/constants";
 import { validationSchema } from "../validations";
 import { PropertyRest } from "../services/propertyRest";
 import { getPropertyId } from "../services/getPorpertyId";
+import PropertySelectValues from "./components/PropertySelectValues";
 
 const { post, put } = PropertyRest;
 
@@ -49,6 +50,7 @@ function PropertiesCreate() {
         </div>
         <div className="w-1/2">
           <PropertyPreview formik={formik} />
+          <PropertySelectValues formik={formik} />
           <PropertyUsedFieldGroups />
         </div>
       </div>

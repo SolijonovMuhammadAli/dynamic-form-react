@@ -9,16 +9,18 @@ export const formFields = [
   "id",
   "block",
   "col_width",
+  "property_options",
 ];
 
 export const initialValues = {
   status: false,
   name: "",
-  type: null,
+  type: "",
   description: "",
   label: "",
   placeholder: "",
   is_required: false,
   block: false,
-  col_width: null,
+  col_width: "",
+  property_options: [],
 };

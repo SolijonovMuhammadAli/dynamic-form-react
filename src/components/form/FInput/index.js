@@ -23,5 +23,5 @@ export default FInput;
 
 FInput.propTypes = {
   formik: PropTypes.object,
-  name: PropTypes.string,
+  name: PropTypes.any,
 };

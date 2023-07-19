@@ -5,15 +5,29 @@
       "status": true,
       "name": "F.I.SH",
       "type": {
-        "value": "string",
-        "label": "Text"
+        "value": "checkbox",
+        "label": "Ro'yxattan bir nechtasi"
       },
       "description": "Bu maydon test uchun ",
       "label": "Sarlavha",
       "placeholder": "fish",
       "is_required": true,
       "block": true,
-      "col_width": 6
+      "col_width": 6,
+      "property_options": [
+        {
+          "name": "asdfs",
+          "value": "asdfsa"
+        },
+        {
+          "name": "1",
+          "value": "1"
+        },
+        {
+          "name": "",
+          "value": ""
+        }
+      ]
     }
   ],
   "properties-group": [

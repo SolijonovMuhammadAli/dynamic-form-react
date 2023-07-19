@@ -3,25 +3,34 @@ import PropTypes from "prop-types";
 import CardContent from "components/CardContent";
 import FormManagement from "components/form/FormManagement";
 import FRow from "components/form/FRow";
+import Grid from "@mui/material/Grid";
 
 function PropertyGroupView({ formik }) {
-  const { feilds, type, name } = formik.values;
-  console.log(type);
+  const { feilds, name } = formik.values;
   return (
     <CardContent title={name}>
-      <div className={type ? "flex gap-2" : "block"}>
+      <Grid container spacing={2}>
         {feilds.map(
-          ({ label, value: { block, type, is_required, name } }, index) => (
-            <FRow
-              key={index}
-              label={label}
-              block={block}
-              required={is_required}>
-              <FormManagement type={type.value} formik={formik} name={name} />
-            </FRow>
+          (
+            {
+              label,
+              value: { block, type, is_required, name, col_width, placeholder },
+            },
+            index
+          ) => (
+            <Grid item xs={col_width ? col_width : 12} key={index}>
+              <FRow label={label} block={block} required={is_required}>
+                <FormManagement
+                  type={type.value}
+                  formik={formik}
+                  name={name}
+                  placeholder={placeholder}
+                />
+              </FRow>
+            </Grid>
           )
         )}
-      </div>
+      </Grid>
     </CardContent>
   );
 }

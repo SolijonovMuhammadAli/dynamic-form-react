@@ -15,19 +15,40 @@ function PropertyInformations({ formik }) {
         <FSwitch formik={formik} name="status" />
       </FRow>
       <FRow label="Maydon nomi" required>
-        <FInput formik={formik} name="name" />
+        <FInput formik={formik} name="name" placeholder="Maydon nomi" />
       </FRow>
       <FRow label="Turi" required>
-        <FSelect formik={formik} name="type" options={inputTypes} />
+        <FSelect
+          formik={formik}
+          name="type"
+          placeholder="Maydon turi"
+          options={inputTypes}
+        />
       </FRow>
       <FRow label="Tavsif" required>
-        <FTextArea formik={formik} name="description" />
+        <FTextArea
+          formik={formik}
+          name="description"
+          placeholder="Maydon haqida qisqacha"
+        />
       </FRow>
       <FRow label="Sarlavha" required>
-        <FInput formik={formik} name="label" />
+        <FInput formik={formik} name="label" placeholder="Maydon sarlavhasi" />
       </FRow>
-      <FRow label="To'ldiruvchi">
-        <FInput formik={formik} name="placeholder" />
+      <FRow label="To'ldiruvchi" required>
+        <FInput
+          formik={formik}
+          name="placeholder"
+          placeholder="Maydon to'ldiruvchisi"
+        />
+      </FRow>
+      <FRow label="Majburiy kengligi">
+        <FInput
+          type="number"
+          formik={formik}
+          name="col_width"
+          placeholder="Madydon kegligi 1 va 12 orqalig'ida"
+        />
       </FRow>
       <FRow label="Joylashuv turi(inline/block)">
         <FSwitch formik={formik} name="block" />

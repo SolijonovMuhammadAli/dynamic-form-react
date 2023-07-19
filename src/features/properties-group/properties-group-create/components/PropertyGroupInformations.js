@@ -30,9 +30,6 @@ function PropertyInformations({ formik }) {
           isMulti
         />
       </FRow>
-      <FRow label="Turi (block/inline)">
-        <FSwitch formik={formik} name="type" />
-      </FRow>
     </CardContent>
   );
 }

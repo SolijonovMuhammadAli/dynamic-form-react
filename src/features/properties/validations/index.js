@@ -6,4 +6,5 @@ export const validationSchema = Yup.object().shape({
   description: Yup.string().required("Ma'lumot to'ldirilmagan"),
   label: Yup.string().required("Ma'lumot to'ldirilmagan"),
   placeholder: Yup.string().required("Ma'lumot to'ldirilmagan"),
+  col_width: Yup.number().min(0).max(12),
 });

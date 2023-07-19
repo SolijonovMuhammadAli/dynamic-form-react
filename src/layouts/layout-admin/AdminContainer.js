@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 function AdminContainer() {
   return (
-    <div className="">
+    <div className="ml-64 bg-blue-100 min-h-screen">
       <Outlet />
     </div>
   );

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 function MainContainer() {
   return (
-    <div className="">
+    <div className="bg-slate-200 h-screen w-full">
       <Outlet />
     </div>
   );

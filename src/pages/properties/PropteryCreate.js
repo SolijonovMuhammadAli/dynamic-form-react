@@ -1,7 +1,8 @@
 import React from "react";
+import PropertiesCreate from "features/properties/properties-create";
 
 function PropteryCreate() {
-  return <div>PropteryCreate</div>;
+  return <PropertiesCreate />;
 }
 
 export default PropteryCreate;

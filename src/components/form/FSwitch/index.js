@@ -1,7 +1,9 @@
+import PropTypes from "prop-types";
+import React from "react";
 import Switch from "./Switch";
 import _ from "lodash";
 
-const FSwitch = ({ formik, addValid, delValid, name, roleId, ...props }) => {
+const FSwitch = ({ formik, name, ...props }) => {
   return (
     <div>
       <Switch
@@ -10,7 +12,6 @@ const FSwitch = ({ formik, addValid, delValid, name, roleId, ...props }) => {
         onChange={(val) => formik?.setFieldValue(name, val)}
         isclearable={"true"}
         {...props}
-        disabled={props.disabled}
       />
       <div className="min-h-6" />
     </div>
@@ -18,3 +19,8 @@ const FSwitch = ({ formik, addValid, delValid, name, roleId, ...props }) => {
 };
 
 export default FSwitch;
+
+FSwitch.propTypes = {
+  formik: PropTypes.object,
+  name: PropTypes.string,
+};

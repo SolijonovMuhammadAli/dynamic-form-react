@@ -29,6 +29,9 @@ function PropertyInformations({ formik }) {
       <FRow label="To'ldiruvchi">
         <FInput formik={formik} name="placeholder" />
       </FRow>
+      <FRow label="Joylashuv turi(inline/block)">
+        <FSwitch formik={formik} name="block" />
+      </FRow>
       <FRow label="Majburiy maydon">
         <FSwitch formik={formik} name="is_required" />
       </FRow>

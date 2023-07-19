@@ -11,6 +11,7 @@ import { validationSchema } from "../validations";
 import ProppertyGroupSetting from "./components/ProppertyGroupSetting";
 import { propertiesGroupRest } from "../services/propertiesGroupRest";
 import { getPropertiesGroupId } from "../services/getPropertiesGroupId";
+import PropertyGroupView from "./components/PropertyGroupView";
 
 const { post, put } = propertiesGroupRest;
 
@@ -46,9 +47,10 @@ function PropertiesCreate() {
           <PropertyGroupInformations formik={formik} />
         </div>
         <div className="w-1/2">
-          <ProppertyGroupSetting />
+          <ProppertyGroupSetting formik={formik} />
         </div>
       </div>
+      <PropertyGroupView formik={formik} />
     </form>
   );
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { Properties, PropertyCreate } from "pages/properties";
 import { Dashboard } from "pages/dashboard";
 import {

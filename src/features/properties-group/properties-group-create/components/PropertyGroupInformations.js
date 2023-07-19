@@ -21,7 +21,7 @@ function PropertyInformations({ formik }) {
       <FRow label="Tavsif" required>
         <FTextArea formik={formik} name="description" />
       </FRow>
-      <FRow label="Turi" required>
+      <FRow label="Maydonlar" required>
         <FAutocomplete
           formik={formik}
           name="feilds"
@@ -29,6 +29,9 @@ function PropertyInformations({ formik }) {
           searchName="name"
           isMulti
         />
+      </FRow>
+      <FRow label="Turi (block/inline)">
+        <FSwitch formik={formik} name="type" />
       </FRow>
     </CardContent>
   );

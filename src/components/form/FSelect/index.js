@@ -1,8 +1,10 @@
+import React from "react";
+import PropTypes from "prop-types";
 import Select from "./Select";
 import ErrorText from "../ErrorText";
 import _ from "lodash";
 
-const FSelect = ({ formik, name, value, options, ...props }) => {
+const FSelect = ({ formik, name, options, ...props }) => {
   return (
     <div>
       <Select
@@ -12,9 +14,6 @@ const FSelect = ({ formik, name, value, options, ...props }) => {
         onChange={(val) => {
           formik.setFieldValue(name, val);
         }}
-        error={
-          _.get(formik.touched, name) && Boolean(_.get(formik.errors, name))
-        }
         isClearable
         {...props}
       />
@@ -24,3 +23,9 @@ const FSelect = ({ formik, name, value, options, ...props }) => {
 };
 
 export default FSelect;
+
+FSelect.propTypes = {
+  formik: PropTypes.object,
+  name: PropTypes.string,
+  options: PropTypes.array,
+};

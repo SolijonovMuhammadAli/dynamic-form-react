@@ -5,11 +5,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PropertyPreview({ formik }) {
-  const { type, name, placeholder } = formik.values;
+  const { type, name, placeholder, block, is_required } = formik.values;
   return (
     <CardContent title="Oldindan ko'rinishi">
       {type && (
-        <FRow label={name}>
+        <FRow label={name} block={block} required={is_required}>
           <FormManagement
             type={type.value}
             placeholder={placeholder}

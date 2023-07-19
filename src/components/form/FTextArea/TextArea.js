@@ -1,8 +1,8 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 export default function TextArea({
   className,
-  style,
-  error,
-  size = 3,
   disabled,
   onChange,
   value,
@@ -27,10 +27,8 @@ export default function TextArea({
             focus-within:outline-none
             transition
             focus-within:border-blue-300
-            ${error ? "border-red-600" : "border-gray-200"}
             ${className}
-        `}
-      style={style}>
+        `}>
       {disabled ? (
         <div
           className="absolute inset-0 rounded-md"
@@ -43,17 +41,6 @@ export default function TextArea({
         value={value}
         onChange={onChange}
         className="w-full outline-none"
-        style={
-          disabled
-            ? {
-                backgroundColor: "#F1F1F1",
-                height: size * 24,
-                margin: 0,
-                position: "relative",
-                zIndex: "1",
-              }
-            : { height: size * 24 }
-        }
         type="text"
         readOnly={disabled}
         {...rest}
@@ -61,3 +48,10 @@ export default function TextArea({
     </div>
   );
 }
+
+TextArea.propTypes = {
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};

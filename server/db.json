@@ -11,7 +11,8 @@
       "description": "asdf",
       "label": "asdf",
       "placeholder": "adfs",
-      "is_required": true
+      "is_required": true,
+      "block": true
     },
     {
       "id": "64b71f8072056c6eb1815354",
@@ -24,7 +25,8 @@
       "description": "Mashhur joylar",
       "label": "Mavjud majburiyatlar",
       "placeholder": "Yer toifasini",
-      "is_required": true
+      "is_required": true,
+      "block": true
     },
     {
       "id": "64b71f828f9bdfa90fe44472",
@@ -37,11 +39,12 @@
       "description": "Mashhur joylar",
       "label": "Mavjud majburiyatlar",
       "placeholder": "Yer toifasini",
-      "is_required": true
+      "is_required": true,
+      "block": true
     },
     {
       "id": "64b71fcaed32117a7ba4ec46",
-      "status": false,
+      "status": true,
       "name": "tahoe",
       "type": {
         "value": "string",
@@ -50,7 +53,8 @@
       "description": "asd",
       "label": "asd",
       "placeholder": "asd",
-      "is_required": false
+      "is_required": true,
+      "block": true
     },
     {
       "id": "64b7ac238e21d0d061bb654e",
@@ -63,7 +67,22 @@
       "description": "sadfs",
       "label": "Mavjud majburiyatlar",
       "placeholder": "sadf",
-      "is_required": true
+      "is_required": true,
+      "block": true
+    },
+    {
+      "id": "64b7c455864ea499693e55aa",
+      "status": true,
+      "name": "Ism",
+      "type": {
+        "value": "string",
+        "label": "Text"
+      },
+      "description": "Ism kiritish uchun",
+      "label": "Mavjud majburiyatlar",
+      "placeholder": "Yer toifasini",
+      "is_required": true,
+      "block": true
     }
   ],
   "properties-group": [
@@ -86,7 +105,8 @@
             "description": "Mashhur joylar",
             "label": "Mavjud majburiyatlar",
             "placeholder": "Yer toifasini",
-            "is_required": true
+            "is_required": true,
+            "block": true
           }
         },
         {
@@ -102,10 +122,32 @@
             "description": "sadfs",
             "label": "Mavjud majburiyatlar",
             "placeholder": "sadf",
-            "is_required": true
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Ism",
+          "value": {
+            "id": "64b7c455864ea499693e55aa",
+            "status": true,
+            "name": "Ism",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "Ism kiritish uchun",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
           }
         }
-      ]
+      ],
+      "type": false,
+      "Uzbekistan 3": "2023-07-16",
+      "Edrward 98": "asas",
+      "Ism": "asas"
     },
     {
       "id": "64b7b4fce0831e0eef15d853",
@@ -113,38 +155,6 @@
       "name": "Edrward 98",
       "description": "asdsa",
       "feilds": [
-        {
-          "label": "tahoe",
-          "value": {
-            "id": "64b71fcaed32117a7ba4ec46",
-            "status": false,
-            "name": "tahoe",
-            "type": {
-              "value": "string",
-              "label": "Text"
-            },
-            "description": "asd",
-            "label": "asd",
-            "placeholder": "asd",
-            "is_required": false
-          }
-        },
-        {
-          "label": "Edrward 98",
-          "value": {
-            "id": "64b7ac238e21d0d061bb654e",
-            "status": true,
-            "name": "Edrward 98",
-            "type": {
-              "value": "string",
-              "label": "Text"
-            },
-            "description": "sadfs",
-            "label": "Mavjud majburiyatlar",
-            "placeholder": "sadf",
-            "is_required": true
-          }
-        },
         {
           "label": "Uzbekistan 3",
           "value": {
@@ -158,31 +168,8 @@
             "description": "Mashhur joylar",
             "label": "Mavjud majburiyatlar",
             "placeholder": "Yer toifasini",
-            "is_required": true
-          }
-        }
-      ]
-    },
-    {
-      "id": "64b7b9d0c6f1e5e8ff53f793",
-      "status": true,
-      "name": "asdas",
-      "description": "aasdfdasf",
-      "feilds": [
-        {
-          "label": "Edrward 98",
-          "value": {
-            "id": "64b7ac238e21d0d061bb654e",
-            "status": true,
-            "name": "Edrward 98",
-            "type": {
-              "value": "string",
-              "label": "Text"
-            },
-            "description": "sadfs",
-            "label": "Mavjud majburiyatlar",
-            "placeholder": "sadf",
-            "is_required": true
+            "is_required": true,
+            "block": true
           }
         },
         {
@@ -198,10 +185,156 @@
             "description": "Mashhur joylar",
             "label": "Mavjud majburiyatlar",
             "placeholder": "Yer toifasini",
-            "is_required": true
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Ism",
+          "value": {
+            "id": "64b7c455864ea499693e55aa",
+            "status": true,
+            "name": "Ism",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "Ism kiritish uchun",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Uzbekistan 4",
+          "value": {
+            "id": "64b71f828f9bdfa90fe44472",
+            "status": true,
+            "name": "Uzbekistan 4",
+            "type": {
+              "value": "date",
+              "label": "Date"
+            },
+            "description": "Mashhur joylar",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
           }
         }
       ]
+    },
+    {
+      "id": "64b7b9d0c6f1e5e8ff53f793",
+      "status": true,
+      "name": "Maydon ko'prinishi",
+      "description": "aasdfdasf",
+      "feilds": [
+        {
+          "label": "Uzbekistan 4",
+          "value": {
+            "id": "64b71f828f9bdfa90fe44472",
+            "status": true,
+            "name": "Uzbekistan 4",
+            "type": {
+              "value": "date",
+              "label": "Date"
+            },
+            "description": "Mashhur joylar",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Ism",
+          "value": {
+            "id": "64b7c455864ea499693e55aa",
+            "status": true,
+            "name": "Ism",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "Ism kiritish uchun",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "tahoe",
+          "value": {
+            "id": "64b71fcaed32117a7ba4ec46",
+            "status": true,
+            "name": "tahoe",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "asd",
+            "label": "asd",
+            "placeholder": "asd",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Ism",
+          "value": {
+            "id": "64b7c455864ea499693e55aa",
+            "status": true,
+            "name": "Ism",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "Ism kiritish uchun",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "Yer toifasini",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Edrward 98",
+          "value": {
+            "id": "64b7ac238e21d0d061bb654e",
+            "status": true,
+            "name": "Edrward 98",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "sadfs",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "sadf",
+            "is_required": true,
+            "block": true
+          }
+        },
+        {
+          "label": "Edrward 98",
+          "value": {
+            "id": "64b7ac238e21d0d061bb654e",
+            "status": true,
+            "name": "Edrward 98",
+            "type": {
+              "value": "string",
+              "label": "Text"
+            },
+            "description": "sadfs",
+            "label": "Mavjud majburiyatlar",
+            "placeholder": "sadf",
+            "is_required": true,
+            "block": true
+          }
+        }
+      ],
+      "type": true
     }
   ]
 }

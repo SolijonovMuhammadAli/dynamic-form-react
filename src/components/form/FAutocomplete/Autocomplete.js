@@ -30,7 +30,6 @@ export default function AutoComplate({
     fetch
       .getApi(url, params)
       .then((res) => {
-        console.log(res);
         setOptions(formatOptions(onFetched(res)));
       })
       .finally(() => setLoading(false));
@@ -42,7 +41,6 @@ export default function AutoComplate({
   };
 
   useEffect(() => {
-    // if (params?.includes("undefined") || params?.includes("null")) return null;
     if (!disabled) {
       getOptions();
     }

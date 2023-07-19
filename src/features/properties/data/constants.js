@@ -7,6 +7,7 @@ export const formFields = [
   "placeholder",
   "is_required",
   "id",
+  "block",
 ];
 
 export const initialValues = {
@@ -17,4 +18,5 @@ export const initialValues = {
   label: "",
   placeholder: "",
   is_required: false,
+  block: false,
 };

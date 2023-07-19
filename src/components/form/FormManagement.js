@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FSelect from "./FSelect";
 import FInput from "./FInput";
 import FSwitch from "./FSwitch";
@@ -27,3 +28,7 @@ function FormManagement(props) {
 }
 
 export default FormManagement;
+
+FormManagement.propTypes = {
+  type: PropTypes.string,
+};

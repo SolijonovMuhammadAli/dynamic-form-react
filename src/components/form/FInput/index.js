@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import _ from "lodash";
 import ErrorText from "../ErrorText";
 import Input from "./Input";
@@ -10,10 +12,6 @@ const FInput = ({ formik, name, ...props }) => {
         name={name}
         value={_.get(formik?.values, name)}
         onChange={formik.handleChange}
-        error={
-          _.get(formik?.errors, name) &&
-          Boolean(_.get(formik.errors, name)).toString()
-        }
         {...props}
       />
       <ErrorText formik={formik} name={name} />
@@ -22,3 +20,8 @@ const FInput = ({ formik, name, ...props }) => {
 };
 
 export default FInput;
+
+FInput.propTypes = {
+  formik: PropTypes.object,
+  name: PropTypes.string,
+};

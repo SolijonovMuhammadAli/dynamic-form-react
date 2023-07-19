@@ -10,7 +10,6 @@ function PropertyGroupTable() {
 
   const getProperties = () => {
     get().then((res) => {
-      console.log(res.data);
       setProperties(res.data);
     });
   };

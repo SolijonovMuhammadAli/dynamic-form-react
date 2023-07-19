@@ -1,4 +1,14 @@
-function Input({ disabled, type = "text", value, onChange, ...rest }) {
+import React from "react";
+import PropTypes from "prop-types";
+
+function Input({
+  disabled,
+  placeholder,
+  type = "text",
+  value,
+  onChange,
+  ...rest
+}) {
   return (
     <div className="">
       <input
@@ -7,6 +17,7 @@ function Input({ disabled, type = "text", value, onChange, ...rest }) {
         value={value}
         disabled={disabled}
         onChange={onChange}
+        placeholder={placeholder}
         {...rest}
       />
     </div>
@@ -14,3 +25,11 @@ function Input({ disabled, type = "text", value, onChange, ...rest }) {
 }
 
 export default Input;
+
+Input.propTypes = {
+  placeholder: PropTypes.string,
+  disabled: PropTypes.bool,
+  type: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

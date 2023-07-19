@@ -1,8 +1,8 @@
+import React from "react";
 import RcSelect from "react-select";
+import PropTypes from "prop-types";
 
 function Select({
-  children,
-  className,
   placeholder = "",
   width,
   height = "32px",
@@ -57,21 +57,21 @@ function Select({
         },
       };
     },
-    valueContainer: (provided, state) => ({
+    valueContainer: (provided) => ({
       ...provided,
       padding: "0 14px",
       fontSize: "14px",
       lineHeight: "24px",
     }),
-    input: (provided, state) => ({
+    input: (provided) => ({
       ...provided,
 
       margin: "0px",
     }),
-    indicatorSeparator: (state) => ({
+    indicatorSeparator: () => ({
       display: "none",
     }),
-    indicatorsContainer: (provided, state) => ({
+    indicatorsContainer: (provided) => ({
       ...provided,
       height: height,
     }),
@@ -87,11 +87,8 @@ function Select({
       };
     },
   };
-
   return (
-    <div
-      style={style}
-      className={`${className} text-body focus-within:z-40 border-0`}>
+    <div style={style} className={` text-body focus-within:z-40 border-0`}>
       <RcSelect
         className="basic-single"
         classNamePrefix="select"
@@ -113,3 +110,26 @@ function Select({
 }
 
 export default Select;
+
+Select.propTypes = {
+  placeholder: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  isClearable: PropTypes.bool,
+  isSearchable: PropTypes.bool,
+  isMulti: PropTypes.bool,
+  disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  options: PropTypes.array,
+  borderRight: PropTypes.string,
+  borderLeft: PropTypes.string,
+  borderTopLeftRadius: PropTypes.string,
+  borderTopRightRadius: PropTypes.string,
+  borderBottomLeftRadius: PropTypes.string,
+  borderBottomRightRadius: PropTypes.string,
+  defaultValue: PropTypes.string,
+  style: PropTypes.object,
+  error: PropTypes.string,
+  onChange: PropTypes.func,
+  onInputChange: PropTypes.func,
+};

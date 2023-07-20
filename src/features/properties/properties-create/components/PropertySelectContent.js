@@ -75,7 +75,7 @@ function PropertySelectContent({
         <></>
       )}
       <div
-        className="p-2 flex w-full border rounded-lg items-center cursor-pointer justify-cente rtext-primary border-primary"
+        className="p-2 flex w-full border rounded-lg items-center cursor-pointer justify-center rtext-primary border-primary"
         onClick={onAddOption}>
         Add option
       </div>

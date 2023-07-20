@@ -7,10 +7,14 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { CircularProgress } from "@mui/material";
 import PropertiesStatus from "./PropertiesGroupStatus";
 
 function PropertiesGroupTable({ data }) {
   const navigate = useNavigate();
+
+  if (data?.length === 0) return <CircularProgress color="secondary" />;
+
   return (
     <TableContainer>
       <Table aria-label="simple table">

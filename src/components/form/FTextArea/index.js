@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import TextArea from "./TextArea";
 import _ from "lodash";
@@ -18,7 +18,7 @@ const FTextArea = ({ formik, name, ...props }) => {
   );
 };
 
-export default FTextArea;
+export default memo(FTextArea);
 
 FTextArea.propTypes = {
   formik: PropTypes.object,

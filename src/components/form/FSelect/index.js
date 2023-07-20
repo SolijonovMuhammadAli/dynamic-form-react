@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import Select from "./Select";
 import ErrorText from "../ErrorText";
@@ -22,7 +22,7 @@ const FSelect = ({ formik, name, options, ...props }) => {
   );
 };
 
-export default FSelect;
+export default memo(FSelect);
 
 FSelect.propTypes = {
   formik: PropTypes.object,

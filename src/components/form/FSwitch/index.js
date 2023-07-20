@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { memo } from "react";
 import Switch from "./Switch";
 import _ from "lodash";
 
@@ -18,7 +18,7 @@ const FSwitch = ({ formik, name, ...props }) => {
   );
 };
 
-export default FSwitch;
+export default memo(FSwitch);
 
 FSwitch.propTypes = {
   formik: PropTypes.object,

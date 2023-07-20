@@ -1,10 +1,10 @@
 import { PropertyRest } from "../services/propertyRest";
 // import { formFields } from "../data/constants";
 
-const { get } = PropertyRest;
+const { getProperties } = PropertyRest;
 
 export const getSelectProperteis = (onChange = () => {}) => {
-  get().then((res) => {
+  getProperties().then((res) => {
     const data = res.data.filter(({ type }) => type.value === "radio");
     onChange(formatData(data));
   });

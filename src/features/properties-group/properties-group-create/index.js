@@ -5,26 +5,29 @@ import { createObjectID } from "mongo-object-reader";
 
 import PropertyGroupHeader from "./components/PropertyGroupHeader";
 import PropertyGroupInformations from "./components/PropertyGroupInformations";
+import ProppertyGroupSetting from "./components/ProppertyGroupSetting";
+import PropertyGroupView from "./components/PropertyGroupView";
+
+import { propertiesGroupRest } from "../services/propertiesGroupRest";
+import { getPropertiesGroupId } from "../services/getPropertiesGroupId";
 
 import { initialValues } from "../data/constants";
 import { validationSchema } from "../validations";
-import ProppertyGroupSetting from "./components/ProppertyGroupSetting";
-import { propertiesGroupRest } from "../services/propertiesGroupRest";
-import { getPropertiesGroupId } from "../services/getPropertiesGroupId";
-import PropertyGroupView from "./components/PropertyGroupView";
 
-const { post, put } = propertiesGroupRest;
+const { postPropertyGroup, putPropertyGroup } = propertiesGroupRest;
 
 function PropertiesCreate() {
   const navigate = useNavigate();
   const params = useParams();
 
+  const handleNavigate = () => navigate("/admin/properties-groups");
+
   const onSubmit = (values) => {
     const data = { id: createObjectID(), ...values };
-    console.log(data);
+
     params?.id
-      ? put(params.id, data).then(() => navigate("/admin/properties-groups"))
-      : post(data).then(() => navigate("/admin/properties-groups"));
+      ? putPropertyGroup(params.id, data).then(handleNavigate)
+      : postPropertyGroup(data).then(handleNavigate);
   };
 
   const formik = useFormik({

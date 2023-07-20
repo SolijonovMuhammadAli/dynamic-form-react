@@ -14,17 +14,19 @@ import { PropertyRest } from "../services/propertyRest";
 import { getPropertyId } from "../services/getPorpertyId";
 import PropertySelectValues from "./components/PropertySelectValues";
 
-const { post, put } = PropertyRest;
+const { postProperty, putProperty } = PropertyRest;
 
 function PropertiesCreate() {
   const navigate = useNavigate();
   const params = useParams();
 
+  const handleNavigate = () => navigate("/admin/properties");
+
   const onSubmit = (values) => {
     const data = { id: createObjectID(), ...values };
     params?.id
-      ? put(params.id, data).then(() => navigate("/admin/properties"))
-      : post(data).then(() => navigate("/admin/properties"));
+      ? putProperty(params.id, data).then(handleNavigate)
+      : postProperty(data).then(handleNavigate);
   };
 
   const formik = useFormik({

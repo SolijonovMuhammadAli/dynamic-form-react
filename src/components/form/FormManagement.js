@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import FSelect from "./FSelect";
 import FInput from "./FInput";
@@ -7,7 +7,6 @@ import FTextArea from "./FTextArea";
 
 function FormManagement(props) {
   const { type, property_options } = props;
-  console.log(type);
   switch (type) {
     case "radio":
       return <FSelect options={property_options} {...props} />;
@@ -28,7 +27,7 @@ function FormManagement(props) {
   }
 }
 
-export default FormManagement;
+export default memo(FormManagement);
 
 FormManagement.propTypes = {
   type: PropTypes.any,

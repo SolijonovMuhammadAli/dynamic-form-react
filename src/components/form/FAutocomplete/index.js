@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import AutoComplate from "./Autocomplete";
 import _ from "lodash";
@@ -23,7 +23,7 @@ const FAutocomplete = ({ formik, name, disabled = false, ...props }) => {
   );
 };
 
-export default FAutocomplete;
+export default memo(FAutocomplete);
 
 FAutocomplete.propTypes = {
   formik: PropTypes.object,

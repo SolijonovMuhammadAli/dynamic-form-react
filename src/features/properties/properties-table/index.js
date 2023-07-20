@@ -1,22 +1,19 @@
-import CardContent from "components/CardContent";
 import React, { useEffect, useState } from "react";
+import CardContent from "components/CardContent";
 import PropertiesTable from "./components/PropertiesTable";
 import { PropertyRest } from "../services/propertyRest";
 
-const { get } = PropertyRest;
+const { getProperties } = PropertyRest;
 
 function PropertyTable() {
   const [properties, setProperties] = useState([]);
 
-  const getProperties = () => {
-    get().then((res) => {
-      console.log(res.data);
-      setProperties(res.data);
-    });
+  const getPropertiesData = () => {
+    getProperties().then((res) => setProperties(res.data));
   };
 
   useEffect(() => {
-    getProperties();
+    getPropertiesData();
   }, []);
   return (
     <CardContent title="Maydonlar jadvali">

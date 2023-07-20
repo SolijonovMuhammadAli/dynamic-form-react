@@ -42,7 +42,7 @@ function PropertyInformations({ formik }) {
           placeholder="Maydon to'ldiruvchisi"
         />
       </FRow>
-      <FRow label="Majburiy kengligi">
+      <FRow label="Kengligi">
         <FInput
           type="number"
           formik={formik}

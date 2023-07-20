@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
-import { getSelectProperteis } from "../../services/getSelectProperteis";
+import React from "react";
 
 function PropertyFieldAttachment() {
-  useEffect(() => {
-    getSelectProperteis();
-  }, []);
   return <div>PropertyFieldAttachment</div>;
 }
 

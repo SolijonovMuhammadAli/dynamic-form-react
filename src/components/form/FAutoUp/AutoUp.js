@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Select from "../FSelect/Select";
 import fetch from "lib/fetch";
 
-const handleFormatOptions = (list) => {
-  return list && list.length
-    ? list.map((elm) => ({ ...elm, label: elm.name }))
-    : [];
-};
-
-export default function AutoUp({
+function AutoUp({
   url = "/",
   params = {},
   onFetched = (res) => res.data,
@@ -17,7 +11,6 @@ export default function AutoUp({
   onChange,
   value,
   children,
-  // searchName = "",
   isMulti,
   disabled = false,
   ...props
@@ -29,15 +22,9 @@ export default function AutoUp({
     setLoading(true);
     fetch
       .getApi(url, params)
-      .then((res) => {
-        setOptions(formatOptions(onFetched(res)));
-      })
+      .then((res) => setOptions(formatOptions(onFetched(res))))
       .finally(() => setLoading(false));
   };
-
-  // const onInputChange = (input) => {
-  //   getOptions({ ...params, [searchName]: input });
-  // };
 
   useEffect(() => {
     if (params.parent) {
@@ -52,7 +39,6 @@ export default function AutoUp({
       value={value}
       isMulti={isMulti}
       onChange={onChange}
-      // onInputChange={onInputChange}
       filterOption={() => true}
       isLoading={isMulti ? false : loading}
       disabled={disabled}
@@ -61,6 +47,8 @@ export default function AutoUp({
     </Select>
   );
 }
+
+export default memo(AutoUp);
 
 AutoUp.propTypes = {
   url: PropTypes.string,
@@ -73,4 +61,10 @@ AutoUp.propTypes = {
   searchName: PropTypes.string,
   isMulti: PropTypes.bool,
   disabled: PropTypes.bool,
+};
+
+const handleFormatOptions = (list) => {
+  return list && list.length
+    ? list.map((elm) => ({ ...elm, label: elm.name }))
+    : [];
 };

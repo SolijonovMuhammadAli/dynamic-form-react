@@ -18,7 +18,6 @@ function Router() {
         </Route>
       ))}
       <Route path="*" element={<ErrorPage />} />
-      {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
     </Routes>
   );
 }

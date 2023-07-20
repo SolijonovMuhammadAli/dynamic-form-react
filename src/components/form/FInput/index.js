@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import ErrorText from "../ErrorText";
@@ -19,7 +19,7 @@ const FInput = ({ formik, name, ...props }) => {
   );
 };
 
-export default FInput;
+export default memo(FInput);
 
 FInput.propTypes = {
   formik: PropTypes.object,

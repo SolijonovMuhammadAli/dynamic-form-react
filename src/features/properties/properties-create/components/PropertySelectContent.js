@@ -22,26 +22,20 @@ function PropertySelectContent({
 
   const onRemoveOption = (index = 0) => {
     if (options.length !== 1) {
-      onChange((old) => old.filter((el, i) => i !== index));
+      onChange((old) => old.filter((_, i) => i !== index));
       setFieldValue(
         optionName,
-        options.filter((el, i) => i !== index)
+        options.filter((_, i) => i !== index)
       );
     }
   };
 
   const onOptionChange = (e, key, index) => {
-    onChange((prevOptions) =>
-      prevOptions.map((option, i) =>
-        index === i ? { ...option, [key]: e.target.value } : option
-      )
-    );
-    setFieldValue(
-      optionName,
-      options.map((option, i) =>
-        index === i ? { ...option, [key]: e.target.value } : option
-      )
-    );
+    const callbackChangeOptin = (option, i) =>
+      index === i ? { ...option, [key]: e.target.value } : option;
+
+    onChange((prevOptions) => prevOptions.map(callbackChangeOptin));
+    setFieldValue(optionName, options.map(callbackChangeOptin));
   };
 
   useEffect(() => {
@@ -81,18 +75,7 @@ function PropertySelectContent({
         <></>
       )}
       <div
-        className="
-          p-2
-          flex
-          w-full
-          border
-          rounded-lg
-          items-center
-          cursor-pointer
-          justify-center
-          text-primary
-          border-primary
-        "
+        className="p-2 flex w-full border rounded-lg items-center cursor-pointer justify-cente rtext-primary border-primary"
         onClick={onAddOption}>
         Add option
       </div>

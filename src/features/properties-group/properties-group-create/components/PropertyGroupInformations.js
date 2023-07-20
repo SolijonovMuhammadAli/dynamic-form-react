@@ -16,13 +16,18 @@ function PropertyInformations({ formik }) {
         <FSwitch formik={formik} name="status" />
       </FRow>
       <FRow label="Nomi" required>
-        <FInput formik={formik} name="name" />
+        <FInput formik={formik} name="name" placeholder="Maydon guruhi nomi" />
       </FRow>
       <FRow label="Tavsif" required>
-        <FTextArea formik={formik} name="description" />
+        <FTextArea
+          formik={formik}
+          name="description"
+          placeholder="Maydon guruhi haqida"
+        />
       </FRow>
       <FRow label="Maydonlar" required>
         <FAutocomplete
+          placeholder="Maydon guruhi ichidagi maydonlar"
           formik={formik}
           name="feilds"
           url="/properties"

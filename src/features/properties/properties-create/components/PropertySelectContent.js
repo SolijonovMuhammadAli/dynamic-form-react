@@ -1,66 +1,79 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Input from "components/form/FInput/Input";
+import FRow from "components/form/FRow";
 
-function PropertySelectContent({ value, onChange = () => {}, formik }) {
+const defalutValue = { label: "", value: "" };
+
+function PropertySelectContent({
+  options,
+  onChange = () => {},
+  formik,
+  optionName,
+}) {
+  const { setFieldValue } = formik;
+
   const onAddOption = () => {
-    if (value) onChange((old) => [...old, { name: "", value: "" }]);
-    else onChange([{ value: "", name: "" }]);
+    if (options) {
+      onChange((old) => [...old, defalutValue]);
+      setFieldValue(optionName, [...options, defalutValue]);
+    } else onChange([defalutValue]);
   };
 
   const onRemoveOption = (index = 0) => {
-    if (value.length !== 1) {
+    if (options.length !== 1) {
       onChange((old) => old.filter((el, i) => i !== index));
+      setFieldValue(
+        optionName,
+        options.filter((el, i) => i !== index)
+      );
     }
   };
 
   const onOptionChange = (e, key, index) => {
-    onChange((el) =>
-      el.map((item, i) =>
-        index === i ? { ...item, [key]: e.target.value } : item
+    onChange((prevOptions) =>
+      prevOptions.map((option, i) =>
+        index === i ? { ...option, [key]: e.target.value } : option
+      )
+    );
+    setFieldValue(
+      optionName,
+      options.map((option, i) =>
+        index === i ? { ...option, [key]: e.target.value } : option
       )
     );
   };
 
+  useEffect(() => {
+    const OldOptions = formik.values[optionName];
+    onChange(OldOptions);
+  }, []);
+
   return (
     <div>
-      {value?.length > 0 ? (
-        value.map(({ name, value }, index) => (
+      {options?.length > 0 ? (
+        options.map(({ label, value }, index) => (
           <div className="flex mb-6" key={index}>
             <div className="rounded-lg border border-gray-200 p-5 flex-grow">
-              <div className="w-full flex items-center">
-                <div className="w-1/3">label</div>
-                <div className="w-2/3">
-                  <Input
-                    type="text"
-                    value={name}
-                    onChange={(e) => {
-                      formik.setFieldValue("property_options", value);
-                      onOptionChange(e, "name", index);
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="w-full mt-6 flex items-center">
-                <div className="w-1/3">value</div>
-                <div className="w-2/3">
-                  <Input
-                    type="text"
-                    value={value}
-                    onChange={(e) => {
-                      onOptionChange(e, "value", index);
-                      formik.setFieldValue("property_options", value);
-                    }}
-                  />
-                </div>
-              </div>
+              <FRow label="label">
+                <Input
+                  type="text"
+                  value={label}
+                  onChange={(e) => onOptionChange(e, "label", index)}
+                />
+              </FRow>
+              <FRow label="value">
+                <Input
+                  type="text"
+                  value={value}
+                  onChange={(e) => onOptionChange(e, "value", index)}
+                />
+              </FRow>
             </div>
-            <div>
-              <div
-                onClick={() => onRemoveOption(index)}
-                className="rounded-full ml-5 flex w-6 h-6 items-center justify-center cursor-pointer bg-gray-200">
-                X
-              </div>
+            <div
+              onClick={() => onRemoveOption(index)}
+              className="rounded-full ml-5 flex w-6 h-6 items-center justify-center cursor-pointer bg-gray-200">
+              X
             </div>
           </div>
         ))
@@ -90,7 +103,9 @@ function PropertySelectContent({ value, onChange = () => {}, formik }) {
 export default PropertySelectContent;
 
 PropertySelectContent.propTypes = {
-  value: PropTypes.array,
+  options: PropTypes.array,
   onChange: PropTypes.func,
   formik: PropTypes.object,
+  optionName: PropTypes.string,
+  optionsSelect: PropTypes.array,
 };

@@ -14,7 +14,15 @@ function PropertyGroupView({ formik }) {
           (
             {
               label,
-              value: { block, type, is_required, name, col_width, placeholder },
+              value: {
+                block,
+                type,
+                is_required,
+                name,
+                col_width,
+                placeholder,
+                property_options,
+              },
             },
             index
           ) => (
@@ -24,6 +32,7 @@ function PropertyGroupView({ formik }) {
                   type={type.value}
                   formik={formik}
                   name={name}
+                  property_options={property_options}
                   placeholder={placeholder}
                 />
               </FRow>

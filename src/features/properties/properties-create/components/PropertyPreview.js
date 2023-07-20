@@ -5,7 +5,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PropertyPreview({ formik }) {
-  const { type, name, placeholder, block, is_required } = formik.values;
+  const { type, name, placeholder, block, is_required, property_options } =
+    formik.values;
   return (
     <CardContent title="Oldindan ko'rinishi">
       {type && (
@@ -15,6 +16,7 @@ function PropertyPreview({ formik }) {
             placeholder={placeholder}
             formik={formik}
             name="for_manag"
+            property_options={property_options}
           />
         </FRow>
       )}

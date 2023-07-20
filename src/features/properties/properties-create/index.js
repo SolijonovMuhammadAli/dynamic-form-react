@@ -47,11 +47,11 @@ function PropertiesCreate() {
       <div className="flex">
         <div className="w-1/2">
           <PropertyInformations formik={formik} />
+          <PropertyUsedFieldGroups />
         </div>
         <div className="w-1/2">
           <PropertyPreview formik={formik} />
           <PropertySelectValues formik={formik} />
-          <PropertyUsedFieldGroups />
         </div>
       </div>
     </form>

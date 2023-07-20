@@ -6,12 +6,13 @@ import FSwitch from "./FSwitch";
 import FTextArea from "./FTextArea";
 
 function FormManagement(props) {
-  const { type } = props;
+  const { type, property_options } = props;
+  console.log(type);
   switch (type) {
     case "radio":
-      return <FSelect {...props} />;
+      return <FSelect options={property_options} {...props} />;
     case "checkbox":
-      return <FSelect isMulti {...props} />;
+      return <FSelect options={property_options} isMulti {...props} />;
     case "boolean":
       return <FSwitch {...props} />;
     case "string":
@@ -30,5 +31,6 @@ function FormManagement(props) {
 export default FormManagement;
 
 FormManagement.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.any,
+  property_options: PropTypes.any,
 };
